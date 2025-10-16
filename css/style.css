@@ -6442,6 +6442,22 @@ button.bg-dark:focus {
   background-color: transparent !important;
 }
 
+.bg-green {
+  background-color: #28a745 !important;
+}
+
+.bg-blue {
+  background-color: #007bff !important;
+}
+
+.bg-purple {
+  background-color: #6f42c1 !important;
+}
+
+.bg-orange {
+  background-color: #fd7e14 !important;
+}
+
 .border {
   border: 1px solid #dee2e6 !important;
 }
