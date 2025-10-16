@@ -47,7 +47,7 @@
                 <a href="#blog" class="nav-item nav-link">Blog</a> -->
                 <a href="#contact" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="" class="btn btn-outline-primary d-none d-lg-block">Hire Me</a>
+            <a href="https://wa.me/923012720273" target="_blank" class="btn btn-outline-primary d-none d-lg-block">Hire Me</a>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -558,7 +558,7 @@
                     <div class="contact-form text-center">
                         <div id="success"></div>
                         <!-- <form name="sentMessage" id="contactForm" novalidate="novalidate"> -->
-                        <form>
+                        <form id="contactFormWA">
                             <div class="form-row">
                                 <div class="control-group col-sm-6">
                                     <input type="text" class="form-control p-4" id="name" placeholder="Your Name"
@@ -646,6 +646,41 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- WhatsApp Form Submission -->
+    <script>
+        document.getElementById('contactFormWA').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var subject = document.getElementById('subject').value;
+            var message = document.getElementById('message').value;
+            
+            // Check if all fields are filled
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // Format message for WhatsApp
+            var whatsappMessage = 
+                'Name: ' + name + '%0a' +
+                'Email: ' + email + '%0a' +
+                'Subject: ' + subject + '%0a' +
+                'Message: ' + message;
+            
+            // WhatsApp URL
+            var whatsappURL = 'https://wa.me/923012720273?text=' + whatsappMessage;
+            
+            // Open WhatsApp in new tab
+            window.open(whatsappURL, '_blank');
+            
+            // Optional: Clear form after submission
+            // document.getElementById('contactForm').reset();
+        });
+    </script>
 </body>
 
 </html>
